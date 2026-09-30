@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vallegran.edu.pe.controller.MainController">
+    <children>
+        <TableView fx:id="tablaProductores" prefHeight="300.0" prefWidth="450.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colNombre" prefWidth="180.0" text="Nombre" />
+                <TableColumn fx:id="colRegion" prefWidth="194.0" text="Región" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
