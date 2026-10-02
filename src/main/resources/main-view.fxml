@@ -1,17 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vallegran.edu.pe.controller.MainController">
-    <children>
-        <TableView fx:id="tablaProductores" prefHeight="300.0" prefWidth="450.0">
-            <columns>
-                <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="colNombre" prefWidth="180.0" text="Nombre" />
-                <TableColumn fx:id="colRegion" prefWidth="194.0" text="Región" />
-            </columns>
-        </TableView>
-    </children>
-</VBox>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f4f6f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vallegran.edu.pe.controller.MainController">
+
+    <!-- BARRA LATERAL IZQUIERDA -->
+    <left>
+        <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #2563eb;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label text="MI SISTEMA" textFill="WHITE" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 0 0 20px 0;" />
+                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: white; -fx-text-fill: #1e293b; -fx-font-weight: bold; -fx-cursor: hand;" text="Inicio" />
+                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: white; -fx-text-fill: #1e293b; -fx-font-weight: bold; -fx-cursor: hand;" text="Usuarios">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- PANEL CENTRAL CON FORMULARIO Y TABLA -->
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="30.0" layoutY="25.0" text="USUARIOS" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+
+                <!-- Campos del Formulario -->
+                <TextField fx:id="txtNombre" layoutX="30.0" layoutY="75.0" prefHeight="30.0" prefWidth="180.0" promptText="Nombre" />
+                <TextField fx:id="txtApellido" layoutX="225.0" layoutY="75.0" prefHeight="30.0" prefWidth="180.0" promptText="Apellido" />
+                <TextField fx:id="txtCorreo" layoutX="420.0" layoutY="75.0" prefHeight="30.0" prefWidth="180.0" promptText="Correo" />
+
+                <ComboBox fx:id="cbEstado" layoutX="615.0" layoutY="75.0" prefHeight="30.0" prefWidth="110.0" promptText="ACTIVO" />
+                <Button fx:id="btnGuardar" layoutX="740.0" layoutY="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Guardar" />
+
+                <Label layoutX="30.0" layoutY="115.0" text="Usuario registrado correctamente." textFill="#16a34a" style="-fx-font-weight: bold;" />
+
+                <!-- Tabla de Datos -->
+                <TableView fx:id="tableUsuarios" layoutX="30.0" layoutY="145.0" prefHeight="415.0" prefWidth="640.0" style="-fx-background-color: white;">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+                        <TableColumn fx:id="colApellido" prefWidth="150.0" text="Apellido" />
+                        <TableColumn fx:id="colCorreo" prefWidth="180.0" text="Correo" />
+                        <TableColumn fx:id="colEstado" prefWidth="98.0" text="Estado" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
