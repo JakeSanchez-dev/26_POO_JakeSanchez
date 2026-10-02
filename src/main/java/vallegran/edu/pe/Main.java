@@ -1,4 +1,4 @@
-package vallegran.edu.pe.view;
+package vallegran.edu.pe;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 350);
+        Scene scene = new Scene(fxmlLoader.load(), 500, 560);
         stage.setTitle("Panel de Control - Productores");
         stage.setScene(scene);
         stage.show();

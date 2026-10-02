@@ -11,6 +11,12 @@ public class Productor {
         this.region = region;
     }
 
+    // Constructor sin id (lo genera MySQL con AUTO_INCREMENT)
+    public Productor(String nombre, String region) {
+        this.nombre = nombre;
+        this.region = region;
+    }
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
